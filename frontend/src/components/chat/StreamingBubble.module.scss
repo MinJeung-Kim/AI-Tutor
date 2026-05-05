@@ -1,0 +1,57 @@
+@import '@/styles/index';
+
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: $space-2;
+  margin-bottom: $space-3;
+}
+
+.avatar {
+  font-size: $text-xl;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  @include flex-center;
+  background: $color-bubble-ai;
+  border-radius: $radius-full;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: $space-3 $space-4;
+  background: $color-bubble-ai;
+  border-radius: $radius-lg;
+  border-bottom-left-radius: $radius-sm;
+}
+
+.text {
+  font-size: $text-sm;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+// 점 애니메이션
+.dots {
+  display: flex;
+  gap: $space-1;
+  align-items: center;
+  height: 20px;
+
+  span {
+    width: 7px;
+    height: 7px;
+    background: $color-text-muted;
+    border-radius: $radius-full;
+    animation: bounce 1.2s infinite ease-in-out;
+
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%           { transform: translateY(-6px); opacity: 1; }
+}

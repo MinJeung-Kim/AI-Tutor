@@ -1,0 +1,77 @@
+@import '@/styles/index';
+
+.container {
+  padding: $space-3 $space-4;
+  background: $color-bg-card;
+  border-top: 1px solid $color-border;
+}
+
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: $space-2;
+  background: $color-bg;
+  border: 1.5px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-2 $space-2 $space-2 $space-4;
+  transition: border-color $transition-fast;
+
+  &:focus-within {
+    border-color: $color-primary;
+  }
+}
+
+.textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: $font-base;
+  font-size: $text-sm;
+  color: $color-text;
+  line-height: 1.6;
+  max-height: 140px;
+  @include scrollbar-hide;
+
+  &::placeholder { color: $color-text-muted; }
+  &:focus { outline: none; }
+}
+
+.btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  font-size: $text-base;
+  font-weight: $weight-bold;
+  @include flex-center;
+  transition: all $transition-fast;
+  cursor: pointer;
+
+  &.send {
+    background: $color-primary;
+    color: $color-text-light;
+
+    &:hover:not(:disabled) { background: $color-primary-dark; }
+    &:disabled {
+      background: $color-border;
+      color: $color-text-muted;
+      cursor: not-allowed;
+    }
+  }
+
+  &.cancel {
+    background: $color-error;
+    color: $color-text-light;
+    font-size: $text-xs;
+
+    &:hover { opacity: 0.85; }
+  }
+}
+
+.hint {
+  font-size: $text-xs;
+  color: $color-text-muted;
+  margin-top: $space-1;
+  padding-left: $space-1;
+}

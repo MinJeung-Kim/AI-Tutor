@@ -1,0 +1,60 @@
+@import '@/styles/index';
+
+.window {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+
+  @include tablet {
+    height: 100vh;
+  }
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: $space-4;
+  @include scrollbar-hide;
+
+  @include tablet {
+    padding: $space-6 $space-8;
+    max-width: $chat-max-width;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.empty {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-3;
+  height: 100%;
+  min-height: 300px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+}
+
+.emptyText {
+  font-size: $text-base;
+  font-weight: $weight-medium;
+  color: $color-text;
+}
+
+.emptyHint {
+  font-size: $text-sm;
+  color: $color-text-muted;
+  font-style: italic;
+}
+
+.error {
+  text-align: center;
+  font-size: $text-sm;
+  color: $color-error;
+  padding: $space-2 $space-4;
+  background: rgba($color-error, 0.08);
+  border-radius: $radius-md;
+  margin: $space-2 0;
+}

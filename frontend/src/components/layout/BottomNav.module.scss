@@ -1,0 +1,43 @@
+@import '@/styles/index';
+
+.bottomNav {
+  display: flex;                 // 모바일: 보임
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height-mobile);
+  background: $color-bg-card;
+  border-top: 1px solid $color-border;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom); // iPhone 노치 대응
+
+  @include tablet {
+    display: none;               // 태블릿+: 숨김
+  }
+}
+
+.tabItem {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-1;
+  flex: 1;
+  padding: $space-2 0;
+  color: $color-text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &.active {
+    color: $color-primary;
+  }
+}
+
+.label {
+  font-size: $text-xs;
+  font-weight: $weight-medium;
+}

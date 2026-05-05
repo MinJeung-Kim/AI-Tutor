@@ -1,0 +1,54 @@
+@import '@/styles/index';
+
+.page {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-6;
+  min-height: 100dvh;
+  padding: $space-8;
+}
+
+.title {
+  font-size: $text-2xl;
+  font-weight: $weight-bold;
+  color: $color-primary;
+}
+
+.testBtn {
+  padding: $space-3 $space-6;
+  background: $color-primary;
+  color: $color-text-light;
+  border-radius: $radius-full;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  transition: background $transition-fast;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: $space-4;
+}
+
+.statCard {
+  @include card;
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-1;
+  padding: $space-4 $space-6;
+}
+
+.statNum {
+  font-size: $text-2xl;
+  font-weight: $weight-bold;
+  color: $color-primary;
+}
+
+.statLabel {
+  font-size: $text-xs;
+  color: $color-text-muted;
+}

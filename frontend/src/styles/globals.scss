@@ -1,0 +1,57 @@
+@import 'index';
+
+// ── 폰트 (Pretendard CDN) ──────────────────────────
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+// ── 리셋 ────────────────────────────────────────────
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-base;
+  font-size: $text-base;
+  color: $color-text;
+  background: $color-bg;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  @include button-reset;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// ── 전역 레이아웃 변수 (CSS Custom Property) ─────────
+// JS에서도 접근 가능하도록 CSS 변수로도 노출
+:root {
+  --nav-height-mobile: #{$nav-height-mobile};
+  --nav-width-desktop: #{$nav-width-desktop};
+  --header-height: #{$header-height};
+  --color-primary: #{$color-primary};
+}
+
+// ── 페이지 기본 컨테이너 ─────────────────────────────
+.container {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 auto;
+
+  @include responsive(padding-inline, $space-4, $space-8);
+}

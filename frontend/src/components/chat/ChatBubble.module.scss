@@ -1,0 +1,55 @@
+@import '@/styles/index';
+
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: $space-2;
+  margin-bottom: $space-3;
+
+  &.user {
+    flex-direction: row-reverse;
+  }
+}
+
+.avatar {
+  font-size: $text-xl;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  @include flex-center;
+  background: $color-bubble-ai;
+  border-radius: $radius-full;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: $space-3 $space-4;
+  border-radius: $radius-lg;
+
+  .user & {
+    background: $color-bubble-user;
+    border-bottom-right-radius: $radius-sm;
+  }
+
+  .ai & {
+    background: $color-bubble-ai;
+    border-bottom-left-radius: $radius-sm;
+  }
+}
+
+.text {
+  font-size: $text-sm;
+  line-height: 1.6;
+
+  .user & { color: $color-text-light; }
+  .ai  & { color: $color-text; }
+}
+
+.time {
+  display: block;
+  font-size: $text-xs;
+  margin-top: $space-1;
+
+  .user & { color: rgba(255, 255, 255, 0.65); text-align: right; }
+  .ai  & { color: $color-text-muted; }
+}

@@ -1,0 +1,8 @@
+@import '@/styles/index';
+
+.loading {
+  @include flex-center;
+  height: 100dvh;
+  color: $color-text-muted;
+  font-size: $text-sm;
+}

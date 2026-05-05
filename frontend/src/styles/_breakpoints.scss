@@ -1,0 +1,27 @@
+// 모바일  : ~767px   → 앱 UI (바텀 탭바, 풀스크린)
+// 태블릿+ : 768px~   → 웹 UI (사이드바, 분할 레이아웃)
+// 데스크탑: 1024px~  → 여백·최대폭 추가
+
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+
+// 태블릿 이상
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+// 데스크탑 이상
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+// 모바일만 (예외 처리용)
+@mixin mobile-only {
+  @media (max-width: ($bp-tablet - 1px)) {
+    @content;
+  }
+}

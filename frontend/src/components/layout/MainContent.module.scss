@@ -1,0 +1,13 @@
+@import '@/styles/index';
+
+.main {
+  // 모바일: 탭바 높이만큼 하단 여백
+  padding-bottom: var(--nav-height-mobile);
+  min-height: 100dvh;
+
+  @include tablet {
+    // 데스크탑: 사이드바 너비만큼 왼쪽으로 밀림
+    margin-left: var(--nav-width-desktop);
+    padding-bottom: 0;
+  }
+}

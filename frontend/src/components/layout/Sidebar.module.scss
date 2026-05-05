@@ -1,0 +1,73 @@
+@import '@/styles/index';
+
+.sidebar {
+  display: none; // 모바일: 숨김
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    width: var(--nav-width-desktop);
+    min-height: 100dvh;
+    background: $color-bg-card;
+    border-right: 1px solid $color-border;
+    padding: $space-6 $space-4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
+
+.logo {
+  @include flex-center;
+  gap: $space-2;
+  padding: $space-2 $space-3;
+  margin-bottom: $space-8;
+  justify-content: flex-start;
+}
+
+.logoIcon {
+  font-size: $text-2xl;
+}
+
+.logoText {
+  font-size: $text-lg;
+  font-weight: $weight-bold;
+  color: $color-primary;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  flex: 1;
+}
+
+.navItem {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  color: $color-text-muted;
+  font-size: $text-sm;
+  font-weight: $weight-medium;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $color-bubble-ai;
+    color: $color-primary;
+  }
+
+  &.active {
+    background: $color-bubble-ai;
+    color: $color-primary;
+    font-weight: $weight-bold;
+  }
+}
+
+.footer {
+  font-size: $text-xs;
+  color: $color-text-muted;
+  padding: $space-2 $space-4;
+}
